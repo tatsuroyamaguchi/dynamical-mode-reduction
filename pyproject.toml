@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmr"
+version = "0.1.0"
+description = "Dynamical Mode Reduction: dimensionality reduction via normal modes of a mass-spring system"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["dimensionality-reduction", "machine-learning", "manifold-learning", "physics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.2",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+umap = ["umap-learn>=0.5"]
+all  = ["matplotlib>=3.7", "umap-learn>=0.5"]
+dev  = ["pytest>=7", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage   = "https://github.com/YOUR_USERNAME/dynamical-mode-reduction"
+Repository = "https://github.com/YOUR_USERNAME/dynamical-mode-reduction"
+Issues     = "https://github.com/YOUR_USERNAME/dynamical-mode-reduction/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dmr*"]
+
+[tool.ruff]
+line-length = 99
+target-version = "py310"
